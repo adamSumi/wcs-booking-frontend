@@ -45,7 +45,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/availability');
+      const response = await fetch('/api/availability');
       if (response.ok) {
         availabilityMap = await response.json();
         // Sort keys to ensure chronological order
@@ -120,7 +120,7 @@
     formData.append('timeslot', `${selectedDate} ${selectedTime}`);
 
     try {
-      const response = await fetch('http://localhost:8080/api/bookings', {
+      const response = await fetch('/api/bookings', {
         method: 'POST',
         body: formData,
       });

@@ -12,31 +12,35 @@
     isMenuOpen = false;
   }
 </script>
+<svelte:head>
+  <title>Adam Sumi WCS</title>
+  <meta name="description" content="West Coast Swing instruction and private lessons in San Diego with Adam Sumilong." />
+</svelte:head>
 
-  <header>
-    <a href="#hero">
-      <img src='/assets/adamsumi_logo_final.png' class="logo" alt="AdamSumi Logo" />
-    </a>
+<header>
+  <a href="#hero">
+    <img src='/assets/adamsumi_logo_final.png' class="logo" alt="AdamSumi Logo" />
+  </a>
 
-    <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+  <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
 
-  <nav class:open={isMenuOpen}>
-    <a class="nav-link" href="#about" on:click={closeMenu}>About</a>
-    <a class="nav-link" href="#calendar" on:click={closeMenu}>Calendar</a>
-    <a class="nav-link" href="#booking" on:click={closeMenu}>Booking</a>
-  </nav>
+<nav class:open={isMenuOpen}>
+  <a class="nav-link" href="#about" on:click={closeMenu}>About</a>
+  <a class="nav-link" href="#calendar" on:click={closeMenu}>Calendar</a>
+  <a class="nav-link" href="#booking" on:click={closeMenu}>Booking</a>
+</nav>
 
-  </header>
+</header>
 
 <main class="container">
   <section id="hero">
 
     <video class="hero-video" autoplay loop muted playsinline>
-      <source src="/assets/background_video.mp4" type="video/mp4" />
+        <source src="https://storage.googleapis.com/wcs-booking-backend-assets/background_video.mp4" type="video/mp4" />
     </video>
 
     <div class="hero-content">
@@ -107,6 +111,13 @@
             frameborder="0"
             scrolling="no">
           </iframe>
+
+          <a href="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&src=OTg1MGZlNTI0OGM3N2Y1YjIyZmViNWYwNTY1NmYzMWVjNjUwM2IzZDAwMTY0NzY5OGU1OTRiMjM2NmM4MWEyZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23e67c73"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="calendar-fallback-link">
+            Calendar not loading? Click here to view it directly.
+          </a>
         </div>
       </div>
 
