@@ -1,6 +1,16 @@
 <script lang="ts">
   // Your logic goes here
   import BookingForm from './lib/BookingForm.svelte';
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+
+  function closeMenu() {
+    isMenuOpen = false;
+  }
 </script>
 
   <header>
@@ -8,11 +18,17 @@
       <img src='/assets/adamsumi_logo_final.png' class="logo" alt="AdamSumi Logo" />
     </a>
 
-    <nav>
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#calendar">Calendar</a>
-      <a class="nav-link" href="#booking">Booking</a>
-    </nav>
+    <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class:open={isMenuOpen}>
+    <a class="nav-link" href="#about" on:click={closeMenu}>About</a>
+    <a class="nav-link" href="#calendar" on:click={closeMenu}>Calendar</a>
+    <a class="nav-link" href="#booking" on:click={closeMenu}>Booking</a>
+  </nav>
 
   </header>
 
