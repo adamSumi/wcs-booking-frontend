@@ -146,8 +146,8 @@ section {
   z-index: 1;
   opacity: 0.4;
 
-  mask-image: radial-gradient(25% 68% at 50% 40%, black 20%, transparent 65%);
-  -webkit-mask-image: radial-gradient(25% 68% at 50% 40%, black 20%, transparent 65%);
+  mask-image: radial-gradient(20% 65% at 50% 40%, black 30%, transparent 65%);
+  -webkit-mask-image: radial-gradient(20% 65% at 50% 40%, black 30%, transparent 65%);
   pointer-events: none;
 }
 
@@ -184,6 +184,14 @@ section {
   gap: 4rem;
   margin-top: 3rem;
 }
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
 .schedule-list h3 {
   font-size: 1.8rem;
   color: #a7e7a7;
@@ -246,6 +254,23 @@ section {
   color: #e7e7e7;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  color: #888;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  color: #e7e7e7;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 900px) {
   header {
     padding: 1rem 2rem;
@@ -259,7 +284,7 @@ section {
   nav {
     position: fixed;
     top: 0;
-    right: -100%; /* Start hidden off-screen */
+    right: -100%;
     width: 250px;
     height: 100vh;
     background-color: #111;
@@ -271,15 +296,14 @@ section {
     border-left: 1px solid #222;
   }
 
-  /* The Svelte class:open directive triggers this */
   nav.open {
     right: 0;
   }
 
   .hero-video {
     transform: translateX(20%) translateY(-10%);
-    mask-image: radial-gradient(25% 50% at 50% 43%, black 20%, transparent 65%);
-    -webkit-mask-image: radial-gradient(25% 50% at 50% 43%, black 20%, transparent 65%);
+    mask-image: radial-gradient(28% 35% at 45% 43%, black 20%, transparent 65%);
+    -webkit-mask-image: radial-gradient(28% 35% at 49% 43%, black 20%, transparent 65%);
   }
 
   .about-image {
@@ -287,7 +311,12 @@ section {
   }
 
   .calendar-layout {
-    grid-template-columns: 1fr; /* Stacks the columns on smaller screens */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 }
